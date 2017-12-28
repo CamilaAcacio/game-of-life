@@ -9,8 +9,16 @@ import org.junit.Test;
 
 public class WhenYouCreateACell {
 
+<<<<<<< HEAD
 //<<<<<<< HEAD
    
+=======
+    @Test
+    public void aLiveCellShouldBeRepresentedByAnAsterisk() {
+        Cell cell = Cell.fromSymbol("*");
+        assertThat(cell, is(LIVE_CELL));
+    }
+>>>>>>> parent of 84c6774... Revert "Revert "CellTest""
 
    
 
