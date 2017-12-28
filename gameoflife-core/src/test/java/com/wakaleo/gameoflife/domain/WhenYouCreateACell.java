@@ -9,17 +9,54 @@ import org.junit.Test;
 
 public class WhenYouCreateACell {
 
-<<<<<<< HEAD
-//<<<<<<< HEAD
-   
-=======
+ @Test
+    public void aLiveCellShouldBeRepresentedByAnAsterisk() {
+        Cell cell = Cell.fromSymbol("+");
+        assertThat(cell, is(LIVE_CELL));
+    }
+
     @Test
+    public void aDeadCellShouldBeRepresentedByADot() {
+        Cell cell = Cell.fromSymbol(".");
+        assertThat(cell, is(DEAD_CELL));
+    }
+
+    @Test
+    public void aLiveCellShouldBePrintedAsAnAsterisk() {
+        assertThat(Cell.LIVE_CELL.toString(), is("*"));
+    }
+	
+	 @Test
     public void aLiveCellShouldBeRepresentedByAnAsterisk() {
         Cell cell = Cell.fromSymbol("*");
         assertThat(cell, is(LIVE_CELL));
     }
->>>>>>> parent of 84c6774... Revert "Revert "CellTest""
 
-   
+    @Test
+    public void aDeadCellShouldBeRepresentedByADot() {
+        Cell cell = Cell.fromSymbol(".");
+        assertThat(cell, is(DEAD_CELL));
+    }
+
+    @Test
+    public void aLiveCellShouldBePrintedAsAnAsterisk() {
+        assertThat(Cell.LIVE_CELL.toString(), is("*"));
+    }
+
+
+    @Test
+    public void aDeadCellShouldBePrintedAsADot() {
+        assertThat(Cell.DEAD_CELL.toString(), is("."));
+    }
+
+    @Test
+    public void aDeadCellSymbolShouldBeADot() {
+        assertThat(Cell.DEAD_CELL.getSymbol(), is("."));
+    }
+
+    @Test
+    public void aLiveCellSymbolShouldBeAnAsterisk() {
+        assertThat(Cell.LIVE_CELL.getSymbol(), is("*"));
+    }
 
 }
