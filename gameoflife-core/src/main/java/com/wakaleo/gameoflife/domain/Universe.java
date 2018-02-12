@@ -45,30 +45,30 @@ public class Universe {
         int maxColumn = currentGridContent.getHeight();
 
 		// Iterates over entire grid
-//        for (int y = 0; y < maxRow; y++) { // From top to bottom
-//            for (int x = 0; x < maxColumn; x++) { // From left to right
-//                Cell currentCell = currentGridContent.getCellAt(x, y);
-//                int neighbourCount = currentGridContent.getLiveNeighboursAt(x, y); // getLiveNeighboursAt() defined in Grid.java
-//                Cell nextCell = null;
-//
-//				// Based on the rules of game-of-life, calculate next state
-//                if (currentCell == Cell.LIVE_CELL) { // If cell is currently LIVE
-//                    if ((neighbourCount == 2) || (neighbourCount == 3)) {
-//                        nextCell = LIVE_CELL; // Stay LIVE if 2 or 3 neighbours are LIVE
-//                    } else {
-//                        nextCell = DEAD_CELL; // Else, become DEAD due to underpopulation or overcrowding
-//                    }
-//                } else { // If cell is currently DEAD
-//                    if (neighbourCount == 3) {
-//                        nextCell = LIVE_CELL; // Become LIVE if 3 neighbours are LIVE
-//                    } else {
-//                        nextCell = DEAD_CELL; // Else, stay DEAD
-//                    }
-//                }
-//                nextGenerationContent.append(nextCell);
-//            }
-//            nextGenerationContent.append(NEW_LINE);
-//        }
+        for (int y = 0; y < maxRow; y++) { // From top to bottom
+            for (int x = 0; x < maxColumn; x++) { // From left to right
+                Cell currentCell = currentGridContent.getCellAt(x, y);
+                int neighbourCount = currentGridContent.getLiveNeighboursAt(x, y); // getLiveNeighboursAt() defined in Grid.java
+                Cell nextCell = null;
+
+				// Based on the rules of game-of-life, calculate next state
+                if (currentCell == Cell.LIVE_CELL) { // If cell is currently LIVE
+                    if ((neighbourCount == 2) || (neighbourCount == 3)) {
+                        nextCell = LIVE_CELL; // Stay LIVE if 2 or 3 neighbours are LIVE
+                    } else {
+                        nextCell = DEAD_CELL; // Else, become DEAD due to underpopulation or overcrowding
+                    }
+                } else { // If cell is currently DEAD
+                    if (neighbourCount == 3) {
+                        nextCell = LIVE_CELL; // Become LIVE if 3 neighbours are LIVE
+                    } else {
+                        nextCell = DEAD_CELL; // Else, stay DEAD
+                    }
+                }
+                nextGenerationContent.append(nextCell);
+            }
+            nextGenerationContent.append(NEW_LINE);
+        }
         nextGenerationContent.append(NEW_LINE);
 
 		// Sets the finalized grid of the game-of-life's next step
