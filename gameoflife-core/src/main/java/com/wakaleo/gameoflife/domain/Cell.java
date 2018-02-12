@@ -12,9 +12,6 @@ public enum Cell {
     LIVE_CELL("*"), DEAD_CELL(".");
 
     private String symbol;
-    private String symbol2;
-    private String symbol3;
-    private String symbol4;
 
     private Cell(final String initialSymbol) {
         this.symbol = initialSymbol;
