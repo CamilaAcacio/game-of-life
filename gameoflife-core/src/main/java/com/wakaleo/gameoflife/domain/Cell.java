@@ -11,7 +11,10 @@ public enum Cell {
 	// Symbols to represent cell status
     LIVE_CELL("*"), DEAD_CELL(".");
 
-    String symbol;
+    private String symbol;
+    private String symbol2;
+    private String symbol3;
+    private String symbol4;
 
     private Cell(final String initialSymbol) {
         this.symbol = initialSymbol;
