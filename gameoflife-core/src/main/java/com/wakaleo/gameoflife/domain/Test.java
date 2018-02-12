@@ -1,19 +1,20 @@
+/*
+ * To change this license header, choose License Headers in Project Properties.
+ * To change this template file, choose Tools | Templates
+ * and open the template in the editor.
+ */
 package com.wakaleo.gameoflife.domain;
 
- /**
- * Wakaleo Consulting - John Ferguson Smart
- * Game of life, demonstration application for Jenkins: The Definitive Guide
+/**
  *
- * Cell.java
- * Cell object class, contains information on individual cells (positions) in the grid
+ * @author Camila
  */
-public enum Cell {
-	// Symbols to represent cell status
-    LIVE_CELL("*"), DEAD_CELL(".");
+public class Test {
 
-    String symbol;
+    private String symbol;
 
-    private Cell(final String initialSymbol) {
+
+    private Test(final String initialSymbol) {
         this.symbol = initialSymbol;
     }
 
@@ -40,4 +41,5 @@ public enum Cell {
     public String getSymbol() {
         return symbol;
     }
+    
 }
