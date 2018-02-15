@@ -28,7 +28,7 @@ public class WhenYouCreateACell {
 
     @Test
     public void aDeadCellShouldBePrintedAsADot() {
-        assertThat(Cell.DEAD_CELL.toString(), is("."));
+        assertThat(Cell.DEAD_CELL.toString(), is("+"));
     }
 
     @Test
