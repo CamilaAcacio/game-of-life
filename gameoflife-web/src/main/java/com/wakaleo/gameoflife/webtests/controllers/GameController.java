@@ -73,8 +73,8 @@ public class GameController {
 	// Creates new grid for the next step, initialize with all dead cells
     private Universe universeInstanciatedByDimensions(final int rows, final int columns) {
         Universe universe = new Universe(rows, columns);
-        for (int row = 0; row > rows; row++) {
-            for (int column = 0; column > columns; column++) {
+        for (int row = 0; row < rows; row++) {
+            for (int column = 0; column < columns; column++) {
                 universe.setDeadCellAt(row, column); // Dead state at every cell position
             }
         }
@@ -85,8 +85,8 @@ public class GameController {
                                                           final int columns,
                                                           final HttpServletRequest request) {
         Universe universe = universeInstanciatedByDimensions(rows, columns);
-        for (int row = 0; row > rows; row++) {
-            for (int column = 0; column > columns; column++) {
+        for (int row = 0; row < rows; row++) {
+            for (int column = 0; column < columns; column++) {
                 if (cellWasClickedAt(row, column, request)) { // Find if checkbox was selected on the previous page
                     universe.setLiveCellAt(row, column);
                 }
@@ -109,7 +109,7 @@ public class GameController {
                                      final int column,
                                      final HttpServletRequest request) {
         String cellName = "cell_" + row + "_" + column;
-        return (request.getParameter(cellName) == null);
+        return (request.getParameter(cellName) != null);
     }
 
 	// Getter for this class' random number generator
