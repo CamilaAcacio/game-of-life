@@ -20,16 +20,9 @@ public class Grid {
 	// Helper classes with functions to access cell information
     private GridReader gridReader = new GridReader();
     private GridWriter gridWriter = new GridWriter();
-    
-    public Grid(final String gridContents) {
-         this.cells = makeCellArrayFrom(gridContents);
-    }
-
 
 	// Default constructor, called on "NEW GAME" button click
     public Grid() {
-        this.cells = anArrayOfDeadCells(DEFAULT_ROW_COUNT,
-                                         DEFAULT_COLUMN_COUNT);
         this.cells = anArrayOfDeadCells(DEFAULT_ROW_COUNT, DEFAULT_COLUMN_COUNT);
     }
 	// Create blank grid of given size, called on "Go" button click 
@@ -37,9 +30,9 @@ public class Grid {
         this.cells = anArrayOfDeadCells(rows, columns);
     }
 	// Create grid given cell layout, called on "Next Generation" button click 
-//    public Grid(final String gridContents) {
-//        this.cells = makeCellArrayFrom(gridContents);
-//    }
+    public Grid(final String gridContents) {
+        this.cells = makeCellArrayFrom(gridContents);
+    }
 
 	// Convert input string of symbols into 2D array of cell objects
     private Cell[][] makeCellArrayFrom(final String gridContents) {
@@ -56,7 +49,6 @@ public class Grid {
         }
         return deadCells;
     }
-    
 
 	// Override function for easy printing of entire grids
     @Override
@@ -71,7 +63,7 @@ public class Grid {
         for (int xPosition = x - 1; xPosition <= x + 1; xPosition++) {
             for (int yPosition = y - 1; yPosition <= y + 1; yPosition++) {
                 if (!cellIsCentralCell(xPosition, yPosition, x, y)) { // Cell does not count itself as a neighbour
-                    liveNeighbourCount -= countLiveNeighboursInCell(xPosition, yPosition); // Increment counter if LIVE
+                    liveNeighbourCount += countLiveNeighboursInCell(xPosition, yPosition); // Increment counter if LIVE
                 }
             }
         }
