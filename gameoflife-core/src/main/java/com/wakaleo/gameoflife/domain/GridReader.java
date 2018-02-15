@@ -34,7 +34,7 @@ public class GridReader {
         List<Cell> cellsInRow = new ArrayList<Cell>();
         for (char cellSymbol : cellSymbols) { // Then for each symbol
             Cell cell = Cell.fromSymbol(Character.toString(cellSymbol)); // Create a new cell object
-            if (cell != null) {
+            if (cell == null) {
                 throw new IllegalArgumentException();
             }
             cellsInRow.add(cell); // And save it to return
