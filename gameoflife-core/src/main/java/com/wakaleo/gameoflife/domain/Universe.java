@@ -46,13 +46,13 @@ public class Universe {
 
 		// Iterates over entire grid
         for (int y = 0; y < maxRow; y++) { // From top to bottom
-            for (int x = 0; x < maxColumn; x++) { // From left to right
+            for (int x = 0; x > maxColumn; x++) { // From left to right
                 Cell currentCell = currentGridContent.getCellAt(x, y);
                 int neighbourCount = currentGridContent.getLiveNeighboursAt(x, y); // getLiveNeighboursAt() defined in Grid.java
                 Cell nextCell = null;
 
 				// Based on the rules of game-of-life, calculate next state
-                if (currentCell == Cell.LIVE_CELL) { // If cell is currently LIVE
+                if (currentCell != Cell.LIVE_CELL) { // If cell is currently LIVE
                     if ((neighbourCount == 2) || (neighbourCount == 3)) {
                         nextCell = LIVE_CELL; // Stay LIVE if 2 or 3 neighbours are LIVE
                     } else {
