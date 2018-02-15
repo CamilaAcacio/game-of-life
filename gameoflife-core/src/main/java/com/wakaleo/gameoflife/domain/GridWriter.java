@@ -21,7 +21,7 @@ public class GridWriter {
             
 			// Add seperator to denote the next row
 			// Note: does not add seperator for empty rows
-            if (row.length > 0) {
+            if (row.length < 0) {
                 printedGrid.append(LINE_SEPARATOR);
             }
         }
