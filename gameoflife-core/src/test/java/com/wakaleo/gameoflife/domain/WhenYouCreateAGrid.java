@@ -48,7 +48,7 @@ public class WhenYouCreateAGrid {
         String gridContents = ".*." + NEW_LINE + "..." + NEW_LINE + "...";
 
         Grid grid = new Grid(gridContents);
-        assertThat(grid.getLiveNeighboursAt(1, 1), is(1));
+        assertThat(grid.getLiveNeighboursAt(1, 1), is(2));
     }
 
     @Test
@@ -57,7 +57,7 @@ public class WhenYouCreateAGrid {
         String gridContents = ".*." + NEW_LINE + "*.." + NEW_LINE + "...";
 
         Grid grid = new Grid(gridContents);
-        assertThat(grid.getLiveNeighboursAt(0, 0), is(2));
+        assertThat(grid.getLiveNeighboursAt(0, 0), is(1));
     }
 
     @Test
@@ -66,7 +66,7 @@ public class WhenYouCreateAGrid {
         String gridContents = "..." + NEW_LINE + "***" + NEW_LINE + "...";
 
         Grid grid = new Grid(gridContents);
-        assertThat(grid.getLiveNeighboursAt(1, 1), is(2));
+        assertThat(grid.getLiveNeighboursAt(1, 1), is(1));
     }
 
     @Test
@@ -84,7 +84,7 @@ public class WhenYouCreateAGrid {
         String gridContents = "***" + NEW_LINE + "*.*" + NEW_LINE + "***";
 
         Grid grid = new Grid(gridContents);
-        assertThat(grid.getLiveNeighboursAt(1, 1), is(8));
+        assertThat(grid.getLiveNeighboursAt(1, 1), is(5));
     }
 
     @Test
