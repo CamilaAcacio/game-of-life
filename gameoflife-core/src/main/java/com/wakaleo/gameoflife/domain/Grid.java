@@ -124,28 +124,6 @@ public class Grid {
             for (int column = 0; column < getWidth(); column++) {
                 contentCopy[row][column] = cells[row][column];
             }
-            for (int column = 0; column < getWidth(); column++) {
-                contentCopy[row][column] = cells[row][column];
-            }
-            for (int column = 0; column < getWidth(); column++) {
-                contentCopy[row][column] = cells[row][column];
-            }
-        }
-        return contentCopy;
-    }
-    
-    public Cell[][] getContentsAll() {
-        Cell[][] contentCopy = new Cell[getHeight()][getWidth()];
-        for (int row = 0; row < getHeight(); row++) {
-            for (int column = 0; column < getWidth(); column++) {
-                contentCopy[row][column] = cells[row][column];
-            }
-            for (int column = 0; column < getWidth(); column++) {
-                contentCopy[row][column] = cells[row][column];
-            }
-            for (int column = 0; column < getWidth(); column++) {
-                contentCopy[row][column] = cells[row][column];
-            }
         }
         return contentCopy;
     }
