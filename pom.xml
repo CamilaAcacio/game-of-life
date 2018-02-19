@@ -20,7 +20,13 @@
         <jelastic.context>gameoflife</jelastic.context>
         <jelastic.environment>wakaleo</jelastic.environment>
     </properties>
-
+    
+    <pluginRepositories>
+		<pluginRepository>
+			<id>hello2morrow.maven.repository</id>
+			<url>http://maven.hello2morrow.com/repository</url>
+		</pluginRepository>
+	</pluginRepositories>
     <scm>
         <connection>scm:git:git@github.com:${github.account}/game-of-life.git</connection>
         <developerConnection>scm:git:git@github.com:${github.account}/game-of-life.git</developerConnection>
@@ -140,6 +146,45 @@
                     <environment>${jelastic.environment}</environment>
                     <api_hoster>app.jelastic.servint.net</api_hoster>
                 </configuration>
+            </plugin>
+            
+            <plugin>
+                <groupId>com.hello2morrow</groupId>
+                <artifactId>sonargraph-maven-plugin</artifactId>
+                <version>9.4.2</version>
+                <configuration>
+                <!--
+                
+                -->
+                  <licenseFile>C:\Program Files (x86)\Sonargraph\Sonargraph.license</licenseFile>
+                  <installationDirectory>C:\Program Files (x86)\Sonargraph</installationDirectory>
+                  <systemDirectory>${basedir}/AlarmClockMain.sonargraph</systemDirectory>
+                  <reportFormat>xml, html</reportFormat>
+                  <prepareForSonarQube>true</prepareForSonarQube> 
+                  <logLevel>info</logLevel>
+                  <reportDirectory>${basedir}/sonargraph-sonar-report</reportDirectory>
+                  <reportFileName>AlarmClockMain</reportFileName>
+                  <reportType>full</reportType>
+                  <sonargraphBuildVersion>same</sonargraphBuildVersion>
+                  <!--  autoUpdate>true</autoUpdate -->
+                  <!-- failSet>
+                    <includes>
+                        <include>
+                            <issueType>NamespaceCycleGroup</issueType>
+                        </include>
+                        <include>
+                            <issueType>ArchitectureViolation</issueType>
+                        </include>
+                    </includes>
+                  </failSet -->
+                </configuration>
+                <executions>
+                  <execution>
+                    <goals>
+                      <goal>create-report</goal>
+                    </goals>
+                  </execution>
+                </executions>
             </plugin>
 
         </plugins>
